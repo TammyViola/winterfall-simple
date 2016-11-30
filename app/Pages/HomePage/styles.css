@@ -1,0 +1,31 @@
+.text-section {
+	margin: 3em auto;
+}
+
+.text-section:first-child {
+	margin-top: 0;
+}
+
+.centered {
+	text-align: center;
+}
+
+p,
+label {
+	font-family: Georgia, Times, 'Times New Roman', serif;
+	line-height: 1.5em;
+}
+
+.link {
+	text-decoration: none;
+}
+
+.username-form {
+	margin-bottom: 1em;
+	color: blue;
+}
+
+.input {
+	outline: none;
+	border-bottom: 1px dotted #999;
+}
