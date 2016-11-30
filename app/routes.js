@@ -6,7 +6,7 @@
  */
 
 const errorLoading = (err) => {
-	console.error('Dynamic page loading failed', err);
+	console.error('动态页面加载失败！', err);
 };
 
 const loadModule = (cb) => (componentModule) => {
