@@ -29,3 +29,9 @@ label {
 	outline: none;
 	border-bottom: 1px dotted #999;
 }
+
+.background{
+	width: 344px;
+	height: 167px;
+	background-image: url(./images/winter2.png);
+}

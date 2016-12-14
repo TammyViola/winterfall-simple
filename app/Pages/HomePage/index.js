@@ -87,9 +87,7 @@ class HomePage extends React.Component {
 						</h1>
 					</section>
 					<section className={`${styles['text-section']} ${styles.centered}`}>
-						<h2>
-							分分钟启动下一个项目
-						</h2>
+						<h2 className={styles.background}></h2>
 					</section>
 					<section className={styles['text-section']}>
 						<h2>
