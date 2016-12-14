@@ -16,7 +16,6 @@ const loadModule = (cb) => (componentModule) => {
 export default function createRoutes() {
 	return [{
 		path: '/',
-		name: 'home',
 		getComponent(nextState, cb) {
 			Promise.all([
 				System.import('Pages/HomePage'),
@@ -26,7 +25,6 @@ export default function createRoutes() {
 		},
 	}, {
 		path: '/features',
-		name: 'features',
 		getComponent(nextState, cb) {
 			Promise.all([
 				System.import('Pages/FeaturePage'),
