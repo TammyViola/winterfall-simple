@@ -10,24 +10,31 @@ import React, { PropTypes } from 'react';
 
 import styles from './styles.css';
 
-function Button(props) {
-	const className = props.className ? props.className : styles.button;
+class Button extends React.Component {
 
-	let button = (
-		<a className={className} href={props.href} onClick={props.onClick}>{props.children}</a>
-	);
+    constructor(props) {
+        super(props);
+    }
 
-	if (props.handleRoute) {
-		button = (
-			<button className={className} onClick={props.handleRoute} >{props.children}</button>
+    render() {
+        const className = this.props.className ? this.props.className : styles.button;
+
+		let button = (
+			<a className={className} href={this.props.href} onClick={this.props.onClick}>{this.props.children}</a>
 		);
-	}
 
-	return (
-		<div className={styles.buttonWrapper}>
-			{button}
-		</div>
-	);
+		if (this.props.handleRoute) {
+			button = (
+				<button className={className} onClick={this.props.handleRoute} >{this.props.children}</button>
+			);
+		}
+
+		return (
+			<div className={styles['button-wrapper']}>
+				{button}
+			</div>
+		);
+    }
 }
 
 Button.propTypes = {

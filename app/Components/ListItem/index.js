@@ -10,14 +10,21 @@ import React from 'react';
 
 import styles from './styles.css';
 
-function ListItem(props) {
-	return (
-		<li className={props.className || styles.item}>
-			<div className={styles['item-content']}>
-				{props.item}
-			</div>
-		</li>
-	);
+class ListItem extends React.Component {
+
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <li className={this.props.className || styles.item}>
+				<div className={styles['item-content']}>
+					{this.props.item}
+				</div>
+			</li>
+        );
+    }
 }
 
 ListItem.propTypes = {

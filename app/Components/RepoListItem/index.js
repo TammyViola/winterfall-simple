@@ -4,8 +4,6 @@
  * 
  * This source code is licensed under the GPL-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
- * 
- * RepoListItem
  */
 
 import React from 'react';
@@ -20,13 +18,12 @@ class RepoListItem extends React.Component {
         const item = this.props.item;
         let nameprefix = '';
         
-        // 如果我们获取到的数据repository被另外一个用户所拥有，
-        // 这是个错误，我们需要把拥有者的名字显示出来
+        // github项目不是自己所属的，则显示所属组织名字
         if (item.owner.login !== this.props.currentUser) {
             nameprefix = `${item.owner.login}/`;
         }
 
-        // 将repository的内容组合在一起
+        // 将github项目内容组合在一起
         const content = (
             <div className={styles['link-wrapper']}>
                 <a
@@ -47,7 +44,7 @@ class RepoListItem extends React.Component {
             </div>
         );
 
-        // 将内容渲染到一个list item中
+        // 将github项目内容渲染到list item中
         return (
             <ListItem key={`repo-list-item-${item.full_name}`} item={content} />
         );

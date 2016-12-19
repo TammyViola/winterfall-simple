@@ -10,25 +10,34 @@ import React from 'react';
 
 import styles from './styles.css';
 
-function List(props) {
-    const ComponentToRender = props.component;
-    let content = (<div></div>);
+class List extends React.Component {
 
-    if (props.items) {
-        content = props.items.map((item, index) => (
-            <ComponentToRender key={`item-${index}`} item={item} />
-        ));
-    } else {
-        content = (<ComponentToRender />);
+    constructor(props) {
+        super(props);
     }
 
-    return (
-        <div className={styles['list-wrapper']}>
-            <ul className={styles.list}>
-                {content}
-            </ul>
-        </div>
-    );
+    render() {
+        const ComponentToRender = this.props.component;
+        const items = this.props.items;
+
+        let content = (<div></div>);
+
+        if (items) {
+            content = items.map((item, index) => (
+                <ComponentToRender key={`item-${index}`} item={item} />
+            ));
+        } else {
+            content = (<ComponentToRender />);
+        }
+
+        return (
+            <div className={styles['list-wrapper']}>
+                <ul className={styles.list}>
+                    {content}
+                </ul>
+            </div>
+        );
+    }
 }
 
 List.propTypes = {
