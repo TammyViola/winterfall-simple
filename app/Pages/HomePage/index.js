@@ -11,15 +11,17 @@
 import React from 'react';
 import { browserHistory } from 'react-router';
 import Helmet from 'react-helmet';
+import { githubData } from './fetch';
 
+/* components */
 import RepoListItem from 'Components/RepoListItem';
 import Button from 'Components/Button';
 import List from 'Components/List';
 import ListItem from 'Components/ListItem';
 import LoadingIndicator from 'Components/LoadingIndicator';
 
+/* styles */
 import styles from './styles.css';
-import { githubData } from './fetch';
 
 class HomePage extends React.Component {
 	constructor(props) {

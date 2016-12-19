@@ -12,10 +12,14 @@ import React from 'react';
 import { browserHistory } from 'react-router';
 import Helmet from 'react-helmet';
 
+/* components */
 import Button from 'Components/Button';
+
+/* styles */
 import styles from './styles.css';
 
 class FeaturePage extends React.Component {
+	
 	openHomePage = () => {
 		browserHistory.push('/');
 	};
