@@ -8,9 +8,11 @@
 
 import React from 'react';
 
+/* components */
 import ListItem from 'Components/ListItem';
 import IssueIcon from 'Components/IssueIcon';
 
+/* styles */
 import styles from './styles.css';
 
 class RepoListItem extends React.Component {
