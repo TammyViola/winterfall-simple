@@ -11,15 +11,15 @@ import React from 'react';
 import styles from './styles.css';
 
 class ListItem extends React.Component {
-    render() {
-        return (
-            <li className={this.props.className || styles.item}>
+	render() {
+		return (
+			<li className={this.props.className || styles.item}>
 				<div className={styles['item-content']}>
 					{this.props.item}
 				</div>
 			</li>
-        );
-    }
+		);
+	}
 }
 
 ListItem.propTypes = {

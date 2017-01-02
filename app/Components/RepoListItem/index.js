@@ -16,41 +16,46 @@ import IssueIcon from 'Components/IssueIcon';
 import styles from './styles.css';
 
 class RepoListItem extends React.Component {
-    render() {
-        const item = this.props.item;
-        let nameprefix = '';
-        
-        // github项目不是自己所属的，则显示所属组织名字
-        if (item.owner.login !== this.props.currentUser) {
-            nameprefix = `${item.owner.login}/`;
-        }
+	render() {
+		const item = this.props.item;
+		let nameprefix = '';
 
-        // 将github项目内容组合在一起
-        const content = (
-            <div className={styles['link-wrapper']}>
-                <a
-                    className={styles['link-repo']}
-                    href={item.html_url}
-                    target="_blank"
-                >
-                    {nameprefix + item.name}
-                </a>
-                <a
-                    className={styles['link-issues']}
-                    href={`${item.html_url}/issues`}
-                    target="_blank"
-                >
-                    <IssueIcon className={styles['issue-icon']} />
-                    {item.open_issues_count}
-                </a>
-            </div>
-        );
+		// github项目不是自己所属的，则显示所属组织名字
+		if (item.owner.login !== this.props.currentUser) {
+			nameprefix = `${item.owner.login}/`;
+		}
 
-        // 将github项目内容渲染到list item中
-        return (
-            <ListItem key={`repo-list-item-${item.full_name}`} item={content} />
-        );
-    }
+		// 将github项目内容组合在一起
+		const content = (
+			<div className={styles['link-wrapper']}>
+				<a
+					className={styles['link-repo']}
+					href={item.html_url}
+					target="_blank"
+				>
+					{nameprefix + item.name}
+				</a>
+				<a
+					className={styles['link-issues']}
+					href={`${item.html_url}/issues`}
+					target="_blank"
+				>
+					<IssueIcon className={styles['issue-icon']} />
+					{item.open_issues_count}
+				</a>
+			</div>
+		);
+
+		// 将github项目内容渲染到list item中
+		return (
+			<ListItem key={`repo-list-item-${item.full_name}`} item={content} />
+		);
+	}
 }
+
+RepoListItem.propTypes = {
+	item: React.PropTypes.Object,
+	currentUser: React.PropTypes.String,
+};
 
 export default RepoListItem;

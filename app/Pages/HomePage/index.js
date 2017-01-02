@@ -1,10 +1,10 @@
 /**
  * Copyright (c) 2016-present, ecidi.
  * All rights reserved.
- * 
+ *
  * This source code is licensed under the GPL-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
- * 
+ *
  * HomePage
  */
 
@@ -34,13 +34,11 @@ class HomePage extends React.Component {
         };
     }
 
-	openFeaturesPage = () => {
-		browserHistory.push('/features');
-	};
-
 	onSubmitForm = (evt) => {
-		if (evt !== undefined && evt.preventDefault) evt.preventDefault();
-		
+		if (evt !== undefined && evt.preventDefault) {
+			evt.preventDefault();
+		}
+
 		this.setState({
 			loading: true,
 		});
@@ -51,10 +49,10 @@ class HomePage extends React.Component {
 				loading: false,
 				repos: data,
 			});
-		}, (err) => {
+		}, () => {
 			this.setState({
 				loading: false,
-				error: true, 
+				error: true,
 			});
 		});
 	};
@@ -63,6 +61,10 @@ class HomePage extends React.Component {
 		this.setState({
 			username: evt.target.value,
 		});
+	};
+
+	openFeaturesPage = () => {
+		browserHistory.push('/features');
 	};
 
 	render() {
@@ -84,7 +86,7 @@ class HomePage extends React.Component {
 
 		return (
 			<article>
-				<Helmet title="首页"/>
+				<Helmet title="首页" />
 				<div>
 					<section className={styles['text-section']}>
 						<h1>
@@ -101,13 +103,13 @@ class HomePage extends React.Component {
 						<form className={styles['username-form']} onSubmit={this.onSubmitForm}>
 							<label htmlFor="username">
 								展示 <input
-										id="username"
-										className={styles.input}
-										type="text"
-										placeholder="帐户名"
-										value={this.state.username}
-										onChange={this.onChangeUsername}
-									/> 的Github资源库
+									id="username"
+									className={styles.input}
+									type="text"
+									placeholder="帐户名"
+									value={this.state.username}
+									onChange={this.onChangeUsername}
+								/> 的Github资源库
 							</label>
 						</form>
 						{mainContent}

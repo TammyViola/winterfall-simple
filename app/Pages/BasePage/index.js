@@ -20,14 +20,18 @@ import styles from './styles.css';
 
 class BasePage extends React.Component {
 	render() {
-	    return (
-	        <div className={styles.wrapper}>
-	            <Helmet titleTemplate="%s - Ecidi"/>
-	            {React.Children.toArray(this.props.children)}
-	            <Footer />
-	        </div>
-	    );
+		return (
+			<div className={styles.wrapper}>
+				<Helmet titleTemplate="%s - Ecidi" />
+				{React.Children.toArray(this.props.children)}
+				<Footer />
+			</div>
+		);
 	}
 }
+
+BasePage.propTypes = {
+	children: React.PropTypes.node,
+};
 
 export default BasePage;

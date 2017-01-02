@@ -19,18 +19,18 @@ import Button from 'Components/Button';
 import styles from './styles.css';
 
 class FeaturePage extends React.Component {
-	
-	openHomePage = () => {
-		browserHistory.push('/');
-	};
 
 	componentDidMount() {
 	}
 
+	openHomePage = () => {
+		browserHistory.push('/');
+	};
+
 	render() {
 		return (
 			<div>
-				<Helmet title="当前是第二页"/>
+				<Helmet title="当前是第二页" />
 				<h1>
 					当前是第二页
 				</h1>
