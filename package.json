@@ -59,7 +59,6 @@
       "es6": true
     },
     "plugins": [
-      "redux-saga",
       "react",
       "jsx-a11y"
     ],
@@ -111,11 +110,7 @@
       "react/self-closing-comp": 0,
       "react/jsx-indent": [2, "tab"],
       "react/jsx-indent-props": [2, "tab"],
-      "react/prefer-stateless-function": 0,
-
-      "redux-saga/no-yield-in-race": 2,
-      "redux-saga/yield-effects": 2,
-      "require-yield": 0
+      "react/prefer-stateless-function": 0
     }
   },
   "devDependencies": {
@@ -138,7 +133,6 @@
     "eslint-plugin-import": "2.0.1",
     "eslint-plugin-jsx-a11y": "2.2.3",
     "eslint-plugin-react": "6.4.1",
-    "eslint-plugin-redux-saga": "0.1.5",
     "eventsource-polyfill": "0.9.6",
     "expect": "1.20.2",
     "expect-jsx": "2.6.0",
