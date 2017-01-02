@@ -1,21 +1,16 @@
 /**
  * Copyright (c) 2016-present, ecidi.
  * All rights reserved.
- * 
+ *
  * This source code is licensed under the GPL-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
  */
- 
+
 import React from 'react';
 
 import styles from './styles.css';
 
 class List extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const ComponentToRender = this.props.component;
         const items = this.props.items;

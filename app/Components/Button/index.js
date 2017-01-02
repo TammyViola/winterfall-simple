@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2016-present, ecidi.
  * All rights reserved.
- * 
+ *
  * This source code is licensed under the GPL-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
  */
@@ -11,11 +11,6 @@ import React, { PropTypes } from 'react';
 import styles from './styles.css';
 
 class Button extends React.Component {
-
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const className = this.props.className ? this.props.className : styles.button;
 
